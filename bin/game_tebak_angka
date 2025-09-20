@@ -9,4 +9,14 @@ void main() {
     print("||  Tebak angka antara 1-100   ||");
     print("||  Kesempatan berdasar Level  ||");
     print("=================================");
+
+    int target = Random().nextInt(100) + 1;
+    int percobaan = 0;
+    bool benar = false;
+
+    while (percobaan < 7 && !benar) {
+        stdout.write("Tebakan ke-${percobaan + 1}: ");
+        int tebakan = int.parse(stdin.readLineSync()!);
+        percobaan++;
+    }
 }
