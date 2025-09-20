@@ -21,8 +21,10 @@ void main() {
         if (tebakan == target) {
         print("🎉 Selamat tebakan anda benar dalam $percobaan percobaan 🎉");
         benar = true;
+        } else if (tebakan < target) {
+        print("Tebakan kamu salah, angka terlalu kecil");
         } else {
-        print("Tebakan kamu salah");
+        print("Tebakan kamu salah, angka terlalu besar");
         }
     }
     if (!benar) {
