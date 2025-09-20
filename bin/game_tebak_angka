@@ -18,5 +18,15 @@ void main() {
         stdout.write("Tebakan ke-${percobaan + 1}: ");
         int tebakan = int.parse(stdin.readLineSync()!);
         percobaan++;
+        if (tebakan == target) {
+        print("🎉 Selamat tebakan anda benar dalam $percobaan percobaan 🎉");
+        benar = true;
+        } else {
+        print("Tebakan kamu salah");
+        }
+    }
+    if (!benar) {
+    print("\nSayang sekali, kamu gagal menebak");
+    print("Jawaban yang benar adalah: $target");
     }
 }
