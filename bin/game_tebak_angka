@@ -10,6 +10,10 @@ void main() {
     print("||  Kesempatan berdasar Level  ||");
     print("=================================");
 
+    stdout.write("Pilih level (1. Mudah, 2. Sedang, 3. Sulit): ");
+    int level = int.parse(stdin.readLineSync()!);
+    int maxPercobaan = (level == 1) ? 7 : (level == 2) ? 5 : 3;
+
     int target = Random().nextInt(100) + 1;
     int percobaan = 0;
     bool benar = false;
