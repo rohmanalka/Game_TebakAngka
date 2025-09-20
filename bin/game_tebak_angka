@@ -9,4 +9,26 @@ void main() {
     print("||  Tebak angka antara 1-100   ||");
     print("||  Kesempatan berdasar Level  ||");
     print("=================================");
+
+    int target = Random().nextInt(100) + 1;
+    int percobaan = 0;
+    bool benar = false;
+
+    while (percobaan < 7 && !benar) {
+        stdout.write("Tebakan ke-${percobaan + 1}: ");
+        int tebakan = int.parse(stdin.readLineSync()!);
+        percobaan++;
+        if (tebakan == target) {
+        print("🎉 Selamat tebakan anda benar dalam $percobaan percobaan 🎉");
+        benar = true;
+        } else if (tebakan < target) {
+        print("Tebakan kamu salah, angka terlalu kecil");
+        } else {
+        print("Tebakan kamu salah, angka terlalu besar");
+        }
+    }
+    if (!benar) {
+    print("\nSayang sekali, kamu gagal menebak");
+    print("Jawaban yang benar adalah: $target");
+    }
 }
