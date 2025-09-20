@@ -10,14 +10,21 @@ void main() {
     print("||  Kesempatan berdasar Level  ||");
     print("=================================");
 
+    stdout.write("Pilih level (1. Mudah, 2. Sedang, 3. Sulit): ");
+    int level = int.parse(stdin.readLineSync()!);
+    int maxPercobaan = (level == 1) ? 7 : (level == 2) ? 5 : 3;
+
     int target = Random().nextInt(100) + 1;
     int percobaan = 0;
     bool benar = false;
 
-    while (percobaan < 7 && !benar) {
+    print("\nKamu punya $maxPercobaan percobaan. Selamat bermain!\n");
+
+    while (percobaan < maxPercobaan && !benar) {
         stdout.write("Tebakan ke-${percobaan + 1}: ");
         int tebakan = int.parse(stdin.readLineSync()!);
         percobaan++;
+
         if (tebakan == target) {
         print("🎉 Selamat tebakan anda benar dalam $percobaan percobaan 🎉");
         benar = true;
@@ -28,7 +35,7 @@ void main() {
         }
     }
     if (!benar) {
-    print("\nSayang sekali, kamu gagal menebak");
+    print("\nSayang sekali, kamu gagal menebak di level $level");
     print("Jawaban yang benar adalah: $target");
     }
 }
