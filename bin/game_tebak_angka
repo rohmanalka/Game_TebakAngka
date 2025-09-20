@@ -2,5 +2,11 @@ import 'dart:io';
 import 'dart:math';
 
 void main() {
-    
+
+    print("=================================");
+    print("||      GAME TEBAK ANGKA       ||");
+    print("||         ----------          ||");
+    print("||  Tebak angka antara 1-100   ||");
+    print("||  Kesempatan berdasar Level  ||");
+    print("=================================");
 }
